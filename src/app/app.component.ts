@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from './services/api/authentication.service'
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'filmAdviser';
-  auth = false;
+  //isAuth: boolean;
+
+  constructor(public authenticationService: AuthenticationService) {
+   //this.isAuth = this.authenticationService.isAuth;
+  }
+
+
 }

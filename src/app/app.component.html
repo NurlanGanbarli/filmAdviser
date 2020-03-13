@@ -8,14 +8,15 @@
       <button>Search</button>
     </div>
     <div class="actions">
-      <div class="sign-pages" *ngIf="!auth">
-        <a href="">sign in</a>
-        <a href="">sign up</a>
+      <div class="sign-pages" *ngIf="!authenticationService.isAuth">
+        <a routerLink="/login">login</a>&nbsp;/
+        <a routerLink="/signup">sign up</a>
       </div>
-      <div class="user-films" *ngIf="auth">
+      <div class="user-films" *ngIf="authenticationService.isAuth">
         my films
       </div>
     </div>
   </div>
 </header>
+<router-outlet></router-outlet>
 

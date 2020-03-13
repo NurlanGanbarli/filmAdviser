@@ -21,6 +21,10 @@ export class AuthenticationService {
     return this.currentUserSubject.value;
   }
 
+  public get isAuth(): boolean {
+    return this.currentUserValue !== null;
+  }
+
   login(email: string, password: string) {
     return this.http.post<any>(`${environment.webApiUrl}/Auth/Login`, { email, password}).pipe(
       map(user => {
@@ -34,6 +38,10 @@ export class AuthenticationService {
   logout(): void {
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
+  }
+
+  getCurrentUser() {
+    return this.http.get(`${environment.webApiUrl}/Users/Current`);
   }
 
 }
