@@ -1,19 +1,19 @@
 <header>
   <div class="container">
     <div class="logo">
-      <a href="">filmAdviser</a>
+      <a routerLink="/">filmAdviser</a>
     </div>
     <div class="search-box">
-      <input type="text">
-      <button>Search</button>
+      <input type="text" placeholder="search">
+      <button><img src="../assets/images/search.svg"></button>
     </div>
     <div class="actions">
       <div class="sign-pages" *ngIf="!authenticationService.isAuth">
         <a routerLink="/login">login</a>&nbsp;/
         <a routerLink="/signup">sign up</a>
       </div>
-      <div class="user-films" *ngIf="authenticationService.isAuth">
-        my films
+      <div class="user" *ngIf="authenticationService.isAuth">
+        {{user?.login}}
       </div>
     </div>
   </div>

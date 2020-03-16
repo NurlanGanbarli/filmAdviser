@@ -10,13 +10,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
+import { HomeComponent } from './home/home.component';
+import { PosterPipe } from './_pipes/poster-pipe/poster.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
