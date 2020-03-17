@@ -13,7 +13,11 @@
         <a routerLink="/signup">sign up</a>
       </div>
       <div class="user" *ngIf="authenticationService.isAuth">
-        {{user?.login}}
+        <span class="prof-name" (click)="menuClick()">{{user?.login}} <img src="../assets/images/down.svg" alt=""></span>
+        <ul class="menu" *ngIf="menuOpen">
+          <li>Profile</li>
+          <li>Logout</li>
+        </ul>
       </div>
     </div>
   </div>

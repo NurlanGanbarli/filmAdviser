@@ -7,7 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MovieCardComponent implements OnInit {
 
-  @Input() movieName: string; rating: string; photo: string;
+  @Input() movieName: string;
+  @Input() rating: string;
+  @Input() photo: string;
 
   constructor() { }
 

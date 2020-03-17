@@ -1,13 +1,21 @@
-<div class="list-of-today">
+<div class="list-of-today trends">
   <h3>Rating of today</h3>
-  <div class="lis">
-    <app-movie-card></app-movie-card>
+  <div class="list">
+    <app-movie-card class="item" *ngFor="let item of dayTrending"
+      [movieName]="item.title"
+      [rating]="item.voteAverage"
+      [photo]="item.posterPath">
+    </app-movie-card>
   </div>
 </div>
 
-<div class="list-of-week">
+<div class="list-of-week trends">
   <h3>Rating of the week</h3>
-  <div class="lis">
-    <app-movie-card></app-movie-card>>
+  <div class="list">
+    <app-movie-card class="item" *ngFor="let item of weekTrending"
+      [movieName]="item.title"
+      [rating]="item.voteAverage"
+      [photo]="item.posterPath">
+    </app-movie-card>
   </div>
 </div>

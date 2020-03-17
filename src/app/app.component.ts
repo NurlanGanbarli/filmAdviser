@@ -9,7 +9,7 @@ import { AuthenticationService } from './services/api/authentication.service'
 export class AppComponent implements OnInit {
   title = 'filmAdviser';
   user: any;
-  // isAuth: boolean;
+  menuOpen = false;
 
   getCurrentUser() {
     if (this.authenticationService.isAuth) {
@@ -19,6 +19,10 @@ export class AppComponent implements OnInit {
     } else {
       this.user = {};
     }
+  }
+
+  menuClick() {
+    this.menuOpen = this.menuOpen === false ? true : false;
   }
 
   constructor(public authenticationService: AuthenticationService) {

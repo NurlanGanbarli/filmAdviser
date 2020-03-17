@@ -1,0 +1,31 @@
+.photo {
+  img {
+    width: 100%;
+  }
+}
+
+.info {
+  padding: 10px;
+
+  .name {
+    h5 {
+      font-family: LatoBlack;
+      font-size: 18px;
+    }
+  }
+
+  .rating {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    img {
+      width: 20px;
+    }
+
+    p {
+      font-family: LatoBlack;
+      font-size: 18px;
+    }
+  }
+}

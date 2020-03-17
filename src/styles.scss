@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: LatoBlack;
+  src: url('./assets/fonts/Lato/Lato-Black.ttf');
+}
+
+
 
 * {
   margin: 0;
@@ -7,9 +13,13 @@
   font-family: sans-serif;
 }
 
+h1,h2,h3,h4,h5.h6 {
+  font-family: LatoBlack;
+}
+
 section {
   box-sizing: border-box;
-  padding-top: 30px;
+  padding-top: 90px;
 }
 
 .container {

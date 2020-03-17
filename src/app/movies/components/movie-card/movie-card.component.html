@@ -1,9 +1,13 @@
-<div class="item">
-  <div class="photo">
-    <img [attr.src]="photo | poster" alt="">
-  </div>
-  <div class="info">
-    <p>{{ rating }}</p>
+
+<div class="photo">
+  <img [attr.src]="photo | poster" alt="">
+</div>
+<div class="info">
+  <div class="name">
     <h5>{{ movieName }}</h5>
+  </div>
+  <div class="rating">
+    <img src="../../../../assets/images/star.svg" alt="">
+    <p>{{ rating }}</p>
   </div>
 </div>
