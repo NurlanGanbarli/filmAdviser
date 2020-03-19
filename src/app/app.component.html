@@ -1,7 +1,7 @@
 <header>
   <div class="container">
     <div class="logo">
-      <a routerLink="/">filmAdviser</a>
+      <a routerLink="/"><img src="../assets/images/filmAdviser-logo.png" alt=""></a>
     </div>
     <div class="search-box">
       <input type="text" placeholder="search">
@@ -13,10 +13,10 @@
         <a routerLink="/signup">sign up</a>
       </div>
       <div class="user" *ngIf="authenticationService.isAuth">
-        <span class="prof-name" (click)="menuClick()">{{user?.login}} <img src="../assets/images/down.svg" alt=""></span>
+        <span class="prof-name" (click)="menuClick()">{{authenticationService.currentUserValue.login}} <img src="../assets/images/down.svg" alt=""></span>
         <ul class="menu" *ngIf="menuOpen">
-          <li>Profile</li>
-          <li>Logout</li>
+          <li routerLink="/profile">Profile</li>
+          <li (click)="logout()">Logout</li>
         </ul>
       </div>
     </div>

@@ -10,6 +10,12 @@ header {
     justify-content: space-between;
     align-items: center;
 
+    .logo {
+      img {
+        width: 60px;
+      }
+    }
+
     .search-box {
       display: flex;
       align-items: center;
@@ -58,6 +64,7 @@ header {
 
           li {
             padding: 10px;
+            cursor: pointer;
 
             &:first-child {
               border-bottom: 1px solid #e6e6e6;

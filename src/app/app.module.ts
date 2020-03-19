@@ -12,6 +12,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { HomeComponent } from './home/home.component';
 import { PosterPipe } from './_pipes/poster-pipe/poster.pipe';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { PosterPipe } from './_pipes/poster-pipe/poster.pipe';
     AppComponent,
     LoginComponent,
     SignUpComponent,
-    HomeComponent
+    HomeComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

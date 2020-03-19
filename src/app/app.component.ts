@@ -25,6 +25,11 @@ export class AppComponent implements OnInit {
     this.menuOpen = this.menuOpen === false ? true : false;
   }
 
+  logout() {
+    this.authenticationService.logout();
+    this.menuOpen = false;
+  }
+
   constructor(public authenticationService: AuthenticationService) {
    // this.isAuth = this.authenticationService.isAuth;
   }
