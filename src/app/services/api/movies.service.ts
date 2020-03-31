@@ -14,8 +14,17 @@ export class MoviesService {
     return this.http.get<any>(`${environment.webApiUrl}/Movie/Trending`, {
       params: new HttpParams().set('timeWindow', timeWindow)
       }).pipe(map((x: any) => {
-        console.log(x);
         return x.map((m: any) => new Movie(m));
+      })
+    );
+  }
+
+  getMovieById(id: string, append: string): Observable<Movie> {
+    return this.http.get<any>(`${environment.webApiUrl}/Movie/${id}`, {
+      params: new HttpParams().set('append', append)
+    }).pipe(
+      map(x => {
+        return new Movie(x);
       })
     );
   }

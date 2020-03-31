@@ -1,0 +1,62 @@
+@mixin formStlye {
+  width: 100%;
+
+  .form-group {
+    width: 100%;
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      height: 35px;
+      padding: 5px;
+      border: 1px solid #cecccc;
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    button {
+      color: #ffffff;
+      background: #030a8d;
+      border: none;
+      padding: 10px 25px;
+      outline: none;
+      cursor: pointer;
+
+      &:hover {
+        background: #040967;
+      }
+    }
+  }
+}
+
+@mixin signPage {
+  padding-top: unset;
+
+  .container {
+    height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .login-box {
+      width: 300px;
+      border: 1px solid #e2e2e2;
+      padding: 20px;
+      box-sizing: border-box;
+      box-shadow: 5px 1px 10px #e0e0e0;
+
+      h2 {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+    form {
+      @include formStlye;
+    }
+    }
+  }
+}

@@ -1,1 +1,47 @@
-<p>movie-detail works!</p>
+<section class="movie-detail-section">
+  <div class="container">
+    <div class="movie" *ngIf="movie">
+      <div class="photo">
+        <img [attr.src]="movie.posterPath | poster" alt="">
+      </div>
+      <div class="info">
+        <header>
+          <div class="name">
+            <h1>{{movie.title}}</h1>
+            <span>{{movie.tagline}}</span>
+          </div>
+          <div class="rate">
+            <img src="../../../../assets/images/star.svg" alt="">
+            <p>{{movie.voteAverage}}/10</p>
+          </div>
+        </header><br><br>
+        <div class="details">
+          <ul>
+            <li>
+              Release date: <span>{{movie.releaseDate}}</span>
+            </li>
+            <li>
+              Language: <span *ngFor="let lang of movie.languages">{{lang}}</span>
+            </li>
+            <li>
+              Budget: <span>{{movie.budget}}</span>
+            </li>
+            <li>
+              Popularity: <span>{{movie.popularity}}</span>
+            </li>
+          </ul><br>
+          <div class="overview">
+            <span>Overview:</span>
+            <p>{{movie.overview}}</p>
+          </div>
+          <div class="trailer">
+            <iframe width="560" height="315" [attr.src]="trailerUrl | video"
+              frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -2,6 +2,7 @@
   <h3>Rating of today</h3>
   <div class="list">
     <app-movie-card class="item" *ngFor="let item of dayTrending"
+      [id]="item.id"
       [movieName]="item.title"
       [rating]="item.voteAverage"
       [photo]="item.posterPath">
@@ -13,6 +14,7 @@
   <h3>Rating of the week</h3>
   <div class="list">
     <app-movie-card class="item" *ngFor="let item of weekTrending"
+      [id]="item.id"
       [movieName]="item.title"
       [rating]="item.voteAverage"
       [photo]="item.posterPath">

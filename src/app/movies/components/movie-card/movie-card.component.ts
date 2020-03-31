@@ -7,9 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MovieCardComponent implements OnInit {
 
+  @Input() id: number;
   @Input() movieName: string;
   @Input() rating: string;
   @Input() photo: string;
+
+  addToWishlist() {
+    // sfsdf
+  }
 
   constructor() { }
 

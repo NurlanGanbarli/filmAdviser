@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from '../services/api/authentication.service';
 import { first } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -20,8 +20,12 @@ export class LoginComponent implements OnInit {
     private router: Router,
   ) {
     this.loginForm = this.fb.group({
-      email: this.fb.control(''),
-      password: this.fb.control('')
+      email: this.fb.control('', [
+        Validators.required
+      ]),
+      password: this.fb.control('', [
+        Validators.required
+      ])
     });
   }
 
@@ -30,6 +34,10 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+    if (this.loginForm.invalid) {
+      return;
+    }
+
     this.authenticationService.login(this.f.email.value, this.f.password.value).pipe(
       first()).subscribe(data => {
         this.router.navigate([this.returnUrl]);

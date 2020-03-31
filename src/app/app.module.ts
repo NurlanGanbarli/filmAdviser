@@ -13,6 +13,7 @@ import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { HomeComponent } from './home/home.component';
 import { PosterPipe } from './_pipes/poster-pipe/poster.pipe';
 import { UserComponent } from './user/user.component';
+import { VideoPipe } from './_pipes/video.pipe';
 
 
 @NgModule({

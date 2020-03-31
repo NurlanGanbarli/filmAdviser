@@ -1,9 +1,9 @@
 
-<div class="photo">
+<div class="photo" routerLink="movie/{{id}}">
   <img [attr.src]="photo | poster" alt="">
 </div>
 <div class="info">
-  <div class="name">
+  <div class="name" routerLink="movie/{{id}}">
     <h5>{{ movieName }}</h5>
   </div>
   <div class="rating">

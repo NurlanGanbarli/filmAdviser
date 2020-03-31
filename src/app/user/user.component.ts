@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Movie } from '../_models/movie';
 
 @Component({
   selector: 'app-user',
@@ -6,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
+
+  myWishlist: Array<Movie>;
+
+  addToWishlist(movie: Movie) {
+    this.myWishlist.push(movie);
+  }
 
   constructor() { }
 

@@ -51,6 +51,10 @@ export class AuthenticationService {
     );
   }
 
+  signup(user: {}) {
+    return this.http.post<any>(`${environment.webApiUrl}/Auth/Sign-up`, user);
+  }
+
   logout(): void {
     localStorage.removeItem('token');
     this.tokenSubject.next(null);

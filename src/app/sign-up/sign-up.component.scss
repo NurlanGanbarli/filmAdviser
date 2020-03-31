@@ -1,0 +1,5 @@
+@import "../../assets/commonStyles/mixins.scss";
+
+.login-section {
+  @include signPage;
+}
