@@ -6,29 +6,32 @@
         <div class="form-group">
           <input type="text" name="fullname" formControlName="fullname" required placeholder="Full name">
           <div *ngIf="f.fullname.invalid && (f.fullname.dirty || f.fullname.touched)" class="alert alert-danger">
-            <p *ngIf="f.fullname.errors.required">Fullname is required</p>
+            <p *ngIf="f.fullname.errors.required">Fullname is required!</p>
           </div>
         </div>
         <div class="form-group">
           <input type="email" name="email" formControlName="email" required placeholder="Email">
           <div *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)" class="alert alert-danger">
-            <p *ngIf="f.email.errors.required">Email is required</p>
+            <p *ngIf="f.email.errors.required">Email is required!</p>
           </div>
         </div>
         <div class="form-group">
           <input type="password" name="password" formControlName="password" required placeholder="Password">
           <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)" class="alert alert-danger">
-            <p *ngIf="f.password.errors.required">Password is required</p>
+            <p *ngIf="f.password.errors.required">Password is required!</p>
           </div>
         </div>
         <div class="form-group">
           <input type="password" name="confPsw" formControlName="confirmPassword" required placeholder="Confirm password">
           <div *ngIf="f.confirmPassword.invalid && (f.confirmPassworddirty || f.confirmPassword.touched)" class="alert alert-danger">
-            <p *ngIf="f.confirmPassword.errors.required">Fullname is required</p>
+            <p *ngIf="f.confirmPassword.errors.required">Fullname is required!</p>
           </div>
         </div>
+        <div *ngIf="f.password.value !== f.confirmPassword.value" class="alert alert-danger">
+          <p>Password and confirm password fileds don't match!</p>
+        </div>
         <div class="form-group">
-          <button type="submit" [disabled]="signUpForm.invalid">
+          <button type="submit" [disabled]="signUpForm.invalid || (f.password.value !== f.confirmPassword.value)">
             Sign up
           </button>
         </div>

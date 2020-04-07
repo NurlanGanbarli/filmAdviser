@@ -34,10 +34,12 @@
 }
 
 @mixin signPage {
-  padding-top: unset;
+  padding-top: 60px;
+  height: calc(100vh - 60px);
+  box-sizing: unset;
 
   .container {
-    height: calc(100vh - 60px);
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
